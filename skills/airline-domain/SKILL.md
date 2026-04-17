@@ -22,19 +22,18 @@ Load specific references on-demand when you need them:
 
 ## AIRLINE CONFIGURATION
 
-> This skill is currently configured as a **generic template**.
-> Fill in the values below and in each reference file to adapt it to a specific airline.
-> See `references/vueling-example.md` for a complete working example (Vueling Airlines).
+> This skill is currently configured as a **Iberia-specific setup**.
+> Iberia values are filled in below and in reference files.
 
-| Parameter | Placeholder | Where to configure |
-|-----------|-------------|-------------------|
-| `AIRLINE_NAME` | `{AIRLINE_NAME}` | This file + all references |
-| `AIRLINE_ID` | `{airline-id}` | pom.xml, package.json, run-guide |
-| `HUB_IATA` | `{HUB_IATA}` | `references/flights-and-fares.md` |
-| `BASE_URL` | `{https://www.airline.com}` | `references/web-flows.md` + scaffolding templates |
-| `FLIGHT_NUMBER_FORMAT` | `{XXnnnn}` | `references/flights-and-fares.md` |
-| `FARE_FAMILIES` | `{FARE_FAMILY_1, FARE_FAMILY_2, ...}` | `references/flights-and-fares.md` |
-| `DEFAULT_CURRENCY` | `{EUR/USD/GBP/...}` | `references/business-rules.md` |
+| Parameter | Value | Where it's used |
+|-----------|-------|-------------------|
+| `AIRLINE_NAME` | `Iberia` | This file + all references |
+| `AIRLINE_ID` | `iberia` | pom.xml, package.json, run-guide |
+| `HUB_IATA` | `MAD` | `references/flights-and-fares.md` |
+| `BASE_URL` | `https://www.iberia.com` | `references/web-flows.md` + scaffolding templates |
+| `FLIGHT_NUMBER_FORMAT` | `IBnnnn` | `references/flights-and-fares.md` |
+| `FARE_FAMILIES` | `Economy, Business, Premium` | `references/flights-and-fares.md` |
+| `DEFAULT_CURRENCY` | `EUR` | `references/business-rules.md` |
 | `JIRA_URL` | `{https://jira.yourcompany.com}` | `skills/framework-scaffolding/assets/templates/java/allure.properties` |
 | `TMS_URL` | `{https://testlink.yourcompany.com}` | `skills/framework-scaffolding/assets/templates/java/allure.properties` |
 | `QA_TEAM_EMAIL` | `{qa-team@yourcompany.com}` | `skills/reporting/assets/templates/run-guide.md` |
@@ -54,15 +53,15 @@ Load specific references on-demand when you need them:
 ## Quick Reference
 
 ### IATA Hub
-`{HUB_IATA}` — {Hub City}
+MAD — Madrid
 
 ### Core Pax Types
-`{PAX_TYPE_1}` · `{PAX_TYPE_2}` · `{PAX_TYPE_3}`
+ADT · CHD · INF
 
 > See `references/flights-and-fares.md` for full definitions, age ranges, and booking rules.
 
 ### Fare Families
-`{FARE_FAMILY_1}` · `{FARE_FAMILY_2}` · `{FARE_FAMILY_3}` · `{FARE_FAMILY_4}`
+Economy · Business · Premium
 
 > See `references/flights-and-fares.md` for inclusions, bag allowances, and change policies.
 
@@ -79,7 +78,7 @@ Load specific references on-demand when you need them:
 
 When adapting this skill for a new airline, complete these steps in order:
 
-- [ ] Fill in all `{AIRLINE_NAME}` and `{AIRLINE_ID}` placeholders in this file
+- [x] Fill in all `Iberia` and `iberia` placeholders in this file
 - [ ] Complete `references/flights-and-fares.md` — IATA network, flight format, fare families, pax types, ancillaries, test data
 - [ ] Complete `references/web-flows.md` — BASE_URL, URL paths per page, booking flow steps, page class names
 - [ ] Complete `references/ui-patterns.md` — loading spinner selector, cookie consent selectors, airline-specific widgets

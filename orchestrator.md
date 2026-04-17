@@ -33,12 +33,6 @@ All execution is delegated to skills via `[INVOKE SKILL: skill-name]`.
 ---
 
 ## Skills Available
-> ⚠️ Prerequisite: The User Story (US) must be analyzed against the requirements defined in `/skills/playbook/us-standardizer.md`.  
-> - If the US does not meet the standard, the system must:
->   1. Clearly explain why it is non-compliant (listing missing or incorrect elements).
->   2. Generate a detailed report in a new folder named `us-report/` (e.g., `us-report/us-compliance-report.md`).
->   3. Prompt the user to decide whether to **continue or stop** the process.  
-> - The process must **not proceed with any of the following skills unless explicit user confirmation is received**.
 
 | Skill | SKILL.md Location | Responsibility |
 |-------|-------------------|----------------|
@@ -121,6 +115,27 @@ Phase 8 ── Present final summary to user
 ---
 
 ## Phase 0: Input Collection & Session Setup
+
+### Step 0.0: User Story Validation ⚠️
+
+Before proceeding with standardization, the user story must be validated against the standard defined in `/skills/playbook/us-standardizer.md`.
+
+- **Input:** Raw User Story provided by user.
+- **Action:** Analizar cumplimiento, detectar elementos faltantes o incorrectos.
+- **Output:** `us-report/us-compliance-report.md` (si es no-cumpliente).
+
+**Regla de Bloqueo:**
+Si la US es **Non-Compliant**, el Orquestador DEBE detenerse y presentar una escalación:
+
+[ESCALATION REQUIRED]
+Issue: User Story does not meet the required standard.
+Report: us-report/us-compliance-report.md
+Blocking Phase: 0.5
+
+Options:
+A) Fix the US manually and provide it again.
+B) Proceed anyway (degraded automation quality).
+C) Stop the process.
 
 ### Step 0.1 — Check Airline Configuration
 
