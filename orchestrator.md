@@ -137,7 +137,10 @@ A) Fix the US manually and provide it again.
 B) Proceed anyway (degraded automation quality).
 C) Stop the process.
 
-### Step 0.1 — Check Airline Configuration
+### Step 0.1 — Check e2e rules
+Before proceeding with airline configuration, keep in mind `/skills/playbook/e2e-testing-lifecycle.md`.
+
+### Step 0.2 — Check Airline Configuration
 
 Read `skills/airline-domain/SKILL.md`. If any `{placeholder}` values remain in the AIRLINE CONFIGURATION table:
 
@@ -151,9 +154,10 @@ Options:
 A) Invoke [airline-setup] now to configure the airline interactively
 B) User provides airline details manually so I can fill the placeholders
 C) Proceed anyway (some automation features will be degraded)
+D) Stop the process
 ```
 
-### Step 0.2 — Detect Existing Framework
+### Step 0.3 — Detect Existing Framework
 
 ```bash
 find . -name "pom.xml" -o -name "package.json" -o -name "requirements.txt" 2>/dev/null | head -5
@@ -161,7 +165,7 @@ find . -name "*Page.java" -o -name "*_page.py" -o -name "*.page.ts" 2>/dev/null 
 find . -path "*/api-tests/pom.xml" 2>/dev/null | head -3
 ```
 
-### Step 0.3 — Determine Execution Mode
+### Step 0.4 — Determine Execution Mode
 
 **Signals for UI_ONLY:**
 - User provides a URL to a web application and UI test cases
@@ -187,7 +191,7 @@ B) API (HTTP tests — Karate DSL)
 C) Both UI and API
 ```
 
-### Step 0.4 — Gather Remaining Requirements
+### Step 0.5 — Gather Remaining Requirements
 
 Collect ONLY what is missing. Do not ask for what you already know.
 
@@ -207,7 +211,7 @@ Collect ONLY what is missing. Do not ask for what you already know.
 - Browser preference (UI only, default: Chrome)
 - Target environments (API: default `dev` + `staging`)
 
-### Step 0.5 — Create Session
+### Step 0.6 — Create Session
 
 ```bash
 mkdir -p .tae-work-state
