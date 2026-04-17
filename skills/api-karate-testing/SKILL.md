@@ -120,6 +120,8 @@ STEP 4 — SCAFFOLD MAVEN PROJECT
   Adapt: group ID, artifact ID, base URL, auth type, environment profiles
   Create directory structure:
     api-tests/
+    ├── karate-config.js
+    ├── logback-test.xml
     ├── pom.xml
     └── src/test/
         ├── java/runner/KarateRunner.java
@@ -162,6 +164,8 @@ STEP 7 — REPORT
 ```
 api-tests/
 ├── pom.xml
+├── karate-config.js
+├── logback-test.xml
 └── src/test/
     ├── java/runner/
     │   └── KarateRunner.java
