@@ -1,0 +1,19 @@
+# Vueling UI Automation — Python Dependencies
+# All versions pinned. No ranges (no ^ or ~).
+
+# Core WebDriver
+selenium==4.18.0
+webdriver-manager==4.0.1
+
+# Test Framework
+pytest==7.4.0
+pytest-html==4.1.1
+
+# Allure
+allure-pytest==2.13.5
+
+# Environment & Config
+python-dotenv==1.0.1
+
+# Utilities
+Pillow==10.2.0

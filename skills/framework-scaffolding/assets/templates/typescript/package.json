@@ -1,0 +1,21 @@
+{
+  "name": "{airline-id}-ui-automation",
+  "version": "1.0.0",
+  "description": "{AIRLINE_NAME} UI Automation Framework — Playwright + Allure",
+  "private": true,
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:smoke": "playwright test --grep @smoke",
+    "test:debug": "playwright test --debug",
+    "report": "allure generate allure-results -o allure-report --clean && allure open allure-report",
+    "clean": "rm -rf allure-results allure-report test-results"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.42.1",
+    "allure-playwright": "2.9.6",
+    "typescript": "5.4.2",
+    "@types/node": "20.11.25",
+    "dotenv": "16.4.5"
+  }
+}
