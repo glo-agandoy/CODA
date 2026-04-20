@@ -121,11 +121,11 @@ Phase 8 ── Present final summary to user
 Before proceeding with standardization, the user story must be validated against the standard defined in `/skills/playbook/us-standardizer.md`.
 
 - **Input:** Raw User Story provided by user.
-- **Action:** Analizar cumplimiento, detectar elementos faltantes o incorrectos.
+- **Action:** Analyze compliance and identify missing or incorrect information.
 - **Output:** `us-report/us-compliance-report.md` (si es no-cumpliente).
 
-**Regla de Bloqueo:**
-Si la US es **Non-Compliant**, el Orquestador DEBE detenerse y presentar una escalación:
+**Blocking Rule:**
+If the US is **Non-Compliant**, the Orchestrator MUST stop and submit an escalation:
 
 [ESCALATION REQUIRED]
 Issue: User Story does not meet the required standard.
